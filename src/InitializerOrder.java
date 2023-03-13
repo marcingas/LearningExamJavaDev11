@@ -1,35 +1,38 @@
 class OrderedClass {
     static int statementOrder;
 
-    int a = clarify("assigning a");
+    int a = print("assigning a " + statementOrder);
 
     // initializer 1
     {
-        clarify("initializer 1");
+        print("initializer 1 " + statementOrder);
     }
 
-    int b = clarify("assigning b");
+    int b = print("assigning b");
 
     // initializer 2
     {
-        clarify("initializer 2");
+        print("initializer 2");
     }
 
     // Constructor
     OrderedClass() {
-        clarify("constructor");
+        print("constructor");
     }
 
-    int c = clarify("assigning c");
+    int c = print("assigning c");
 
     //  initializer 3
     {
-        clarify("initializer 3");
+        print("initializer 3");
+    }
+    static{
+        System.out.println("static init");
     }
 
     // method called from initializers which should help us understand
     // the order of execution
-    int clarify(String message) {
+    int print(String message) {
         statementOrder++;
         System.out.println(statementOrder + " " + message);
         return statementOrder;

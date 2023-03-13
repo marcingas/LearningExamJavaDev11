@@ -1,10 +1,12 @@
 class MixItUpClass {
+
     static int statementOrder;
 
     int a = clarify("assigning a", statementOrder);
 
     //  initializer 1
     {
+
         // we reference variable declared above in initializer statement
         clarify("initializer 1", this.a);
     }
@@ -14,14 +16,17 @@ class MixItUpClass {
 
     //  initializer 2
     {
+
         // we reference variable declared above in initializer statement
         clarify("initializer 2", this.b);
     }
 
+
     // Constructor
     MixItUpClass() {
-        // we reference variable declared below in constructor statement
         d = clarify("constructor", this.d);
+        // we reference variable declared below in constructor statement
+
     }
 
     // we reference variable declared above in declaration and assignment
@@ -29,9 +34,11 @@ class MixItUpClass {
 
     //  initializer 3
     {
+
         // we reference variable declared above in initializer statement
         clarify("initializer 3", this.c);
     }
+
 
     int clarify(String message, int passedVariable) {
         statementOrder++;
@@ -40,6 +47,10 @@ class MixItUpClass {
     }
 
     int d;
+
+
+
+
 
     public String toString() {
         return this.a + ", " + this.b + ", " + this.c + ", " + this.d;
